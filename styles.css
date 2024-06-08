@@ -1,0 +1,160 @@
+/* Define CSS variables for colors, font sizes, and margins */
+:root {
+    --primary-color: #ea1111;
+    --secondary-color: #f0f0f0;
+    --accent-color: #4a47ff;
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --font-size-base: 16px;
+    --margin-base: 1rem;
+}
+
+/* Apply global styles */
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+/* Fluid typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-secondary);
+    margin: var(--margin-base) 0;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1em;
+}
+
+/* Header styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: var(--margin-base);
+    text-align: center;
+    position: fixed;
+    width: 100;
+    top: 0;
+    z-index: 990;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 var(--margin-base);
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+body{
+    padding-top: 90px;
+}
+section {
+    padding: var(--margin-base);
+    position: relative;
+    margin-top: var(--margin-base);
+}
+
+article {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    padding: var(--margin-base);
+    margin-bottom: var(--margin-base);
+    position: relative;
+}
+
+
+#genres, #artists, #instruments {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--margin-base);
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+articl::before{
+    content:'new';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+    padding: 0.5m;
+    border-radius: 50%;
+    font-size:0.75em;
+}
+button{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 0.5em 1em;
+    margin-top: var(--margin-base);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.8s ease, transform 0.8s ease;
+}
+button:hover{
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: var(--margin-base);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        font-size: calc(var(--font-size-base) - 2px);
+    }
+
+    header, footer {
+        padding: calc(var(--margin-base) / 2);
+    }
+}
